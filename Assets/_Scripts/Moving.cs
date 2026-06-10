@@ -19,6 +19,8 @@ public class Moving : MonoBehaviour
     private bool isMoving = false;
     [SerializeField] private float speed = 1f;
 
+    [SerializeField] Animator animator;
+
     void Start()
     {
         path = new Vector3[5] { point1.transform.position, point2.transform.position, point3.transform.position, point4.transform.position, point5.transform.position};
@@ -29,9 +31,11 @@ public class Moving : MonoBehaviour
         if (isMoving)
         {
             transform.position = Vector3.MoveTowards(transform.position, path[currentTarget], Time.deltaTime * speed);
+            animator.SetFloat("State", 1f);
         }
         else
         {
+            animator.SetFloat("State", 0f);
             if (direction)
                 currentTarget++;
             else currentTarget--;

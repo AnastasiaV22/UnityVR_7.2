@@ -77,7 +77,7 @@ BlendTree:
     m_CycleOffset: 0
     m_DirectBlendParameter: State
     m_Mirror: 0
-  m_BlendParameter: Vert
+  m_BlendParameter: State
   m_BlendParameterY: State
   m_MinThreshold: 0
   m_MaxThreshold: 1
